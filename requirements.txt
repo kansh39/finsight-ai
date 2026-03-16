@@ -1,0 +1,11 @@
+streamlit
+langchain
+langchain-groq
+langchain-community
+langgraph
+tavily-python
+yfinance
+pandas
+plotly
+pydantic
+fpdf2
