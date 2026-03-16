@@ -28,8 +28,8 @@ st.markdown("""
     .main-header h1 { color: white; margin: 0; font-size: 2.2rem; }
     .main-header p { color: #90E0EF; margin: 4px 0 0; font-size: 1rem; }
     div[data-testid="stMetric"] {
-        background: #1E2A3A;
-        border: 1px solid #1E3A5F;
+        background: #f0f8ff;
+        border: 1px solid #00B4D8;
         border-radius: 10px;
         padding: 12px 16px;
     }
