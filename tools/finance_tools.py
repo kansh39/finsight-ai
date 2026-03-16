@@ -4,13 +4,22 @@ import pandas as pd
 def get_financial_data(ticker: str) -> dict:
     try:
         stock = yf.Ticker(ticker)
+        
+        # Force fresh download
+        hist = stock.history(period="1y", auto_adjust=True)
         info = stock.info
-        hist = stock.history(period="1y")
+        
+        # Try fast_info as backup
+        try:
+            fast = stock.fast_info
+            current_price = fast.last_price
+        except Exception:
+            current_price = info.get("currentPrice") or info.get("regularMarketPrice", "N/A")
 
         return {
             "ticker": ticker,
             "company_name": info.get("longName", ticker),
-            "current_price": info.get("currentPrice", "N/A"),
+            "current_price": round(current_price, 2) if isinstance(current_price, float) else current_price,
             "market_cap": info.get("marketCap", "N/A"),
             "pe_ratio": info.get("trailingPE", "N/A"),
             "revenue": info.get("totalRevenue", "N/A"),
