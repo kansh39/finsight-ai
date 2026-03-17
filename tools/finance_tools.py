@@ -10,12 +10,12 @@ def get_financial_data(ticker: str) -> dict:
         # Call 1 - Current price first
         quote_url = f"https://www.alphavantage.co/query?function=GLOBAL_QUOTE&symbol={ticker}&apikey={API_KEY}"
         quote_data = requests.get(quote_url, timeout=15).json()
-        time.sleep(13)
+        time.sleep(20)
 
         # Call 2 - Overview
         overview_url = f"https://www.alphavantage.co/query?function=OVERVIEW&symbol={ticker}&apikey={API_KEY}"
         overview = requests.get(overview_url, timeout=15).json()
-        time.sleep(13)
+        time.sleep(20)
 
         # Call 3 - Weekly history
         weekly_url = f"https://www.alphavantage.co/query?function=TIME_SERIES_WEEKLY&symbol={ticker}&apikey={API_KEY}"
