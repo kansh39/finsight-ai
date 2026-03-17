@@ -1,7 +1,7 @@
 import os
 
-GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "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")
-TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "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")
+GROQ_API_KEY = os.environ.get("GROQ_API_KEY", "")
+TAVILY_API_KEY = os.environ.get("TAVILY_API_KEY", "")
 ALPHA_VANTAGE_KEY = os.environ.get("ALPHA_VANTAGE_KEY", "YDIOQ269XP22HKZ4")
 
 os.environ["GROQ_API_KEY"] = GROQ_API_KEY
